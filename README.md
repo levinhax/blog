@@ -10,3 +10,9 @@
 - 计算机基础
 
 ## 目录
+
+### 编程语言
+
+#### JavaScript
+
+- [原型](Language/JavaScript/原型.md)
