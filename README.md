@@ -20,3 +20,4 @@
 #### JavaScript
 
 - [原型](Language/JavaScript/原型.md)
+- [继承](Language/JavaScript/继承.md)
