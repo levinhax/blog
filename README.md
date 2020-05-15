@@ -21,3 +21,4 @@
 
 - [原型](Language/JavaScript/原型.md)
 - [继承](Language/JavaScript/继承.md)
+- [new的原理及模拟实现](Language/JavaScript/new的原理及模拟实现.md)
