@@ -24,3 +24,4 @@
 - [new的原理及模拟实现](Language/JavaScript/new的原理及模拟实现.md)
 - [JS的this指向](Language/JavaScript/JS的this指向.md)
 - [call、apply和bind的模拟实现](Language/JavaScript/call、apply和bind的模拟实现.md)
+- [防抖与节流](Language/JavaScript/防抖与节流.md)
