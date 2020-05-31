@@ -27,6 +27,7 @@
 - [防抖与节流](Language/JavaScript/防抖与节流.md)
 - [深浅拷贝](Language/JavaScript/深浅拷贝.md)
 - [异步](Language/JavaScript/异步.md)
+- [Event Loop](Language/JavaScript/EventLoop.md)
 
 ### 工程化
 
