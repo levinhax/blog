@@ -1,6 +1,6 @@
 # 重构前端路线
 
-删繁就简三秋树 领异标新二月花✍ 有感而发，形式不限，意于总结回顾，胜在交流探究
+删繁就简三秋树 领异标新二月花✍ 有感而发，形式不限。意于总结回顾，胜在交流探究，欢迎小伙伴一起参与讨论，可以在对应博客下的issue内进行讨论
 
 喜欢的话请点star，想订阅点watch https://github.com/levinhax/blog
 
@@ -11,7 +11,7 @@
 
 ## 目录
 
-### 编程语言
+### 编程语言(Language)
 
 #### CSS
 
@@ -29,7 +29,13 @@
 - [异步](Language/JavaScript/异步.md)
 - [Event Loop](Language/JavaScript/EventLoop.md)
 
-### 工程化
+### 类库框架(Framework)
+
+#### Vue
+
+- [Vue3源码学习-准备篇](Framework/Vue/Vue3源码学习-准备篇.md)
+
+### 工程化(Engineering)
 
 #### 项目场景
 
