@@ -2,7 +2,7 @@
 
 vue3 beta 版已经出来一段时间了，在尝试了vue3 的 composition-api 后，忍不住想要研究一下源码(嘴上喊着学不动🐶🐶)，向尤大学习。
 
-当前学习版本：[v3.0.0-beta.15](https://github.com/vuejs/vue-next/releases/tag/v3.0.0-beta.15)
+当前学习版本：[v3.0.0-rc.5](https://github.com/vuejs/vue-next/releases/tag/v3.0.0-rc.5)
 
 ### 如何调试Vue3源码
 
@@ -98,7 +98,7 @@ circleci 是一款进行持续集成，持续部署的平台。类似的工具�
 
 **当前状态**
 
-Status: Beta.
+Status: Release Candidate(发布候选).
 
 [软件版本](https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E7%89%88%E6%9C%AC/229062?fr=aladdin)
 
