@@ -59,3 +59,4 @@
 ### 其他(Other)
 
 - [koa-api-tpl项目搭建](Other/koa-api-tpl项目搭建.md)
+- [react-admin-tpl项目搭建](Other/react-admin-tpl项目搭建.md)
