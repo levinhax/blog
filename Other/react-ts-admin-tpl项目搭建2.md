@@ -26,11 +26,35 @@ export default App;
 ## 引入scss
 
 ```
-npm install --save node-sass
+npm install --save-dev node-sass
 ```
 不需要eject，不需要改webpack配置，安装后即可使用。
 
 Adding a CSS Modules Stylesheet: 文件命名 - [name].module.css，如 Button.module.css，Button.module.scss
+
+## Normalize.css
+
+Normalize.css 是一个可以定制的CSS文件，它让不同的浏览器在渲染网页元素的时候形式更统一。
+
+```
+npm install --save normalize.css
+```
+
+把Normalize.css里面的所有内容放在自己的style/index.css的最上面，如果有冲突的话，写在后面的CSS设置默认是会覆盖normalize.css的内容
+
+在styles/index.css中引入
+```
+@import '~normalize.css/normalize.css';
+@import '~antd/dist/antd.css';
+
+body {}
+```
+
+或在index.tsx中引入：
+```
+import 'normalize.css/normalize.css'
+import './styles/index.css'
+```
 
 ## 配置webpack
 
@@ -41,12 +65,14 @@ Adding a CSS Modules Stylesheet: 文件命名 - [name].module.css，如 Button.m
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore .",
-    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore .",
-    "format": "prettier --write \"src/**/*\"",
+    "lint": "npm run lint-eslint && npm run lint-stylelint",
+    "lint-eslint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore .",
+    "lint-eslint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx --ignore-path .eslintignore .",
+    "lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{css,scss,less}",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\"",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-  },
+  }
 ```
 
 使用create-react-app脚手架搭建的react工程，webpack和相关的依赖都已经配置好了，开发编译打包都很省心。但是随着项目的深入，难免会遇到要改webpack配置的情况。
@@ -120,6 +146,6 @@ module.exports = override(
 ```
 index.tsx
 
-import '@/styles/App.css'
 import '@/styles/index.scss'
+import '@/styles/App.css'
 ```
