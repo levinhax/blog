@@ -62,4 +62,5 @@
 - [koa-api-tpl项目搭建](Other/koa-api-tpl项目搭建.md)
 - [react-ts-admin-tpl项目搭建](Other/react-ts-admin-tpl项目搭建.md)
 - [react-ts-admin-tpl项目搭建2](Other/react-ts-admin-tpl项目搭建2.md)
+- [react-ts-admin-tpl项目搭建3](Other/react-ts-admin-tpl项目搭建3.md)
 - [git创建空白新分支](Other/git创建空白新分支.md)
