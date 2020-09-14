@@ -65,3 +65,4 @@
 - [react-ts-admin-tpl项目搭建2](Other/react-ts-admin-tpl项目搭建2.md)
 - [react-ts-admin-tpl项目搭建3](Other/react-ts-admin-tpl项目搭建3.md)
 - [git创建空白新分支](Other/git创建空白新分支.md)
+- [vue3-pc-tpl项目搭建](Other/vue3-pc-tpl项目搭建.md)
