@@ -44,6 +44,7 @@
 
 - [Vue3源码学习-准备篇](Framework/Vue/Vue3源码学习-准备篇.md)
 - [Vue3源码学习-reactivity模块](Framework/Vue/Vue3源码学习-reactivity模块.md)
+- [Vue3源码学习-vite](Framework/Vue/Vue3源码学习-vite.md)
 
 ### 计算机基础(Computer)
 
