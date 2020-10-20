@@ -160,11 +160,17 @@ yarn-error.log
 
 在src目录下，创建shim.d.ts、source.d.ts
 
-shim.d.ts: (这个其实不太需要，因为项目中全是通过tsx开发的)(对这句话我有疑问)
+shim.d.ts: (这个其实不太需要，因为项目中全是通过tsx开发的，如果用到.vue文件需要声明)
 ```
+// declare module '*.vue' {
+//   import Vue from 'vue'
+//   export default Vue
+// }
+
 declare module '*.vue' {
-  import Vue from 'vue';
-  export default Vue;
+  import { Component } from 'vue'
+  const component: Component
+  export default component
 }
 ```
 
@@ -356,4 +362,264 @@ import App from './App.vue'
 import '/@/index.css'
 
 createApp(App).use(router).use(store).mount('#app')
+```
+
+## 添加 Sass 样式表
+
+```
+npm install --save-dev sass
+```
+
+```
+import { createApp } from 'vue'
+import router from '/@/router'
+import store from '/@/store'
+import App from './App.vue'
+// import '/@/index.css'
+import './style/index.scss'
+
+const app = createApp(App)
+app.use(router).use(store).mount('#app')
+```
+
+.variable.scss
+```
+$layoutBg: #2273cf;
+
+:export {
+  layoutBg: $layoutBg;
+}
+```
+
+style/index.scss
+```
+@import './variable.scss';
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $layoutBg;
+}
+```
+
+修改shim.d.ts
+```
+declare module '*.vue' {
+  import Vue from 'vue'
+  export default Vue
+}
+
+// declare module '*.vue' {
+//   import { Component } from 'vue'
+//   const component: Component
+//   export default component
+// }
+
+//解决scss文件报错问题
+declare module '*.scss' {
+  const sass: any
+  export default sass
+}
+```
+
+新建postcss.config.js，后续会用得到
+```
+module.exports = {
+  autoprefixer: {},
+}
+```
+
+normalize.css
+```
+npm install --save normalize.css
+```
+
+```
+import 'normalize.css/normalize.css'
+```
+
+## Ant Design of Vue
+
+```
+npm install --save ant-design-vue@next
+```
+
+main.js
+```
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+
+app.use(Antd)
+```
+
+views/About/index.vue
+```
+<template>
+  <div>
+    <a-button type="primary">About</a-button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'About',
+}
+</script>
+```
+
+views/About/index.tsx
+```
+import { defineComponent } from 'vue'
+import Logo from '../../assets/logo.png'
+// import HelloWorld from '../../components/HelloWorld.vue'
+import { Input, Divider } from 'ant-design-vue'
+
+export default defineComponent({
+  name: 'About',
+  setup() {
+    return () => (
+      <div class="about">
+        <h3>This is about page.</h3>
+        <img src={Logo}/>
+
+        {/* 这里使用tsx写法，就不建议引入.vue文件了 */}
+        {/* <HelloWorld /> */}
+
+        <Input style="width: 200px;" />
+        <Divider />
+      </div>
+    )
+  },
+})
+```
+
+## 代码提交校验
+
+package.json修改
+```
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .eslintignore .",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .eslintignore .",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.vue\""
+  },
+```
+
+eslint补充包：
+```
+npm install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser --save-dev
+```
+
+我们使用husky这个库来为我们添加pre-commit功能: npm install husky lint-staged --save-dev
+
+```
+// package.json
+
+"husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+},
+```
+这里直接使用了.huskyrc配置文件
+
+```
+.huskyrc
+
+{
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}
+```
+
+使用commitlint规范git提交信息
+```
+npm install --save-dev @commitlint/cli @commitlint/config-conventional
+```
+
+在根目录新建一个 commitlint.config.js 文件，用作自定义一些commit提交规则，当然这一步也可以不做，直接使用常规校验也行
+```
+// commitlint.config.js
+
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'build',
+        'ci',
+        'chore',
+        'docs',
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'revert',
+        'style',
+        'test',
+      ],
+    ],
+    'type-case': [0],
+    'type-empty': [0],
+    'scope-empty': [0],
+    'scope-case': [0],
+    'subject-full-stop': [0, 'never'],
+    'subject-case': [0, 'never'],
+    'header-max-length': [0, 'always', 72],
+  },
+}
+```
+
+在之前的husky配置中，把commitlint的校验命令添加进去:
+```
+"husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+},
+```
+
+在package.json中新增：
+```
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  },
+```
+此时git提交就会先执行校验。
+
+## CHANGELOG
+
+```
+npm install --save-dev conventional-changelog-cli
+```
+
+在package.json中新增:
+```
+"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+```
+
+生成日志: npm run changelog
+
+conventional-changelog-cli不会覆盖任何以前的变更日志。 新增的日志基于自上一个commit的
+
+如果这是您第一次使用此工具，并且想要生成所有以前的变更日志，则可以执行：
+```
+conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
+## Mock数据
+
+这里借助 vite-plugin-mock
+```
+npm install --save-dev vite-plugin-mock
 ```
