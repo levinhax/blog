@@ -617,6 +617,77 @@ conventional-changelog-cli不会覆盖任何以前的变更日志。 新增的�
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
+## 环境变量
+
+```
+.env
+
+# loaded in all cases
+VITE_HOST = '0.0.0.0'
+VITE_PORT = 8080
+VITE_BASE_URL = './'
+VITE_OUTPUT_DIR = 'dist'
+
+.env.staging
+
+# 测试环境
+VITE_APP_ENV = 'staging'
+
+# Whether to open mock
+VITE_USE_MOCK = false
+
+# base api
+VITE_APP_BASE_API = '/api/'
+```
+
+修改package.json
+```
+  "scripts": {
+    "dev": "NODE_ENV=development vite",
+    "build": "NODE_ENV=production vite build",
+    "build:stage": "NODE_ENV=staging vite build",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .eslintignore .",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue --ignore-path .eslintignore .",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.vue\"",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+```
+
+vite.config.ts
+```
+import { SharedConfig } from 'vite'
+import path from 'path'
+import fs from 'fs'
+import dotenv from 'dotenv'
+
+const pathResolve = (pathStr: string) => {
+  return path.resolve(__dirname, pathStr)
+}
+
+// console.log('config log: ')
+// console.log(process.env.NODE_ENV)
+
+const envFiles = [
+  /** default file */ `.env`,
+  /** mode file */ `.env.${ process.env.NODE_ENV }`
+]
+
+for (const file of envFiles) {
+  const envConfig = dotenv.parse(fs.readFileSync(file))
+  for (const k in envConfig) {
+    process.env[k] = envConfig[k]
+  }
+}
+
+const config: SharedConfig = {
+  alias: {
+    '/@/': pathResolve('./src'),
+  },
+}
+
+module.exports = config
+```
+
 ## Mock数据
 
 这里借助 vite-plugin-mock
