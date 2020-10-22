@@ -494,6 +494,20 @@ export default defineComponent({
 })
 ```
 
+```
+npm install --save-dev babel-plugin-import
+```
+
+```
+.babelrc
+
+{
+  "plugins": [
+    ["import", { "libraryName": "ant-design-vue", "libraryDirectory": "es", "style": true }]
+  ]
+}
+```
+
 ## 代码提交校验
 
 package.json修改
@@ -690,7 +704,29 @@ module.exports = config
 
 ## Mock数据
 
-这里借助 vite-plugin-mock
+这里可借助 vite-plugin-mock 插件
 ```
 npm install --save-dev vite-plugin-mock
+```
+
+<!-- 我还是使用了之前的
+```
+npm install --save-dev mockjs chokidar chalk @babel/register
+```
+
+- mockjs：数据mock
+- chokidar：对文件进行监控，不会产生多次的事件
+- chalk：使输出不再单调
+- @babel/register：为require加了一个钩子（hook），之后所有被 node 引用的 .es6、.es、.jsx 以及 .js 文件都会先被 Babel 转码
+- body-parser：解析http请求体，bodyParser.json(options)、bodyParser.raw(options)、bodyParser.text(options)、bodyParser.urlencoded(options)分别处理json数据、Buffer流数据、文本数据、UTF-8的编码的数据
+- path：用于处理文件和目录的路径 -->
+
+**vite 第三方库**
+
+"/", "./", or "../"开头的路径，才是合法的，这个其实也好说，我们对main.js里返回的内容做个重写就可以，我们做个规定，把import from 后面，不是上面仨符号开头的，加一个/@modules/前缀
+```
+// 替换前
+import { createApp } from 'vue'
+// 替换后
+import { createApp } from '/@modules/vue'
 ```
