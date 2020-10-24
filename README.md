@@ -32,6 +32,7 @@
 - [Event Loop](Language/JavaScript/EventLoop.md)
 - [JS之堆栈调用](Language/JavaScript/JS之堆栈调用.md)
 - [代理(Proxy)和反射(Reflect)](Language/JavaScript/代理(Proxy)和反射(Reflect).md)
+- [Promise的实现](Language/JavaScript/Promise的实现.md)
 
 #### TypeScript
 
