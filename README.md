@@ -13,6 +13,10 @@
 
 ### 编程语言(Language)
 
+#### HTML5
+
+- [服务器发送事件SSE](Language/HTML5/服务器发送事件SSE.md)
+
 #### CSS
 
 - [什么是BFC](Language/CSS/什么是BFC.md)
@@ -72,6 +76,10 @@
 
 - [移动端适配及PC端适配](Engineering/Mobile/移动端适配及PC端适配.md)
 
+### 实践(Practice)
+
+- [vue项目改造SSR同构](Engineering/Practice/vue项目改造SSR同构.md)
+
 ### 其他(Other)
 
 - [koa-api-tpl项目搭建](Other/koa-api-tpl项目搭建.md)
@@ -81,3 +89,4 @@
 - [git创建空白新分支](Other/git创建空白新分支.md)
 - [vue3-pc-tpl项目搭建](Other/vue3-pc-tpl项目搭建.md)
 - [vue3-ts-vite-admin项目搭建](Other/vue3-ts-vite-admin项目搭建.md)
+- [JSON Schema内容](Other/JSON%20Schema内容.md)
