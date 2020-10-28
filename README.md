@@ -24,6 +24,8 @@
 - [瀑布流布局](Language/CSS/瀑布流布局.md)
 - [position属性](Language/CSS/position属性.md)
 - [盒模型](Language/CSS/盒模型.md)
+- [link与@import的区别.md](Language/CSS/link与@import的区别.md)
+- [居中布局.md](Language/CSS/居中布局.md)
 
 #### JavaScript
 
@@ -31,6 +33,7 @@
 - [继承](Language/JavaScript/继承.md)
 - [new的原理及模拟实现](Language/JavaScript/new的原理及模拟实现.md)
 - [JS的this指向](Language/JavaScript/JS的this指向.md)
+- [闭包](Language/JavaScript/闭包.md)
 - [call、apply和bind的模拟实现](Language/JavaScript/call、apply和bind的模拟实现.md)
 - [防抖与节流](Language/JavaScript/防抖与节流.md)
 - [深浅拷贝](Language/JavaScript/深浅拷贝.md)
@@ -39,6 +42,8 @@
 - [JS之堆栈调用](Language/JavaScript/JS之堆栈调用.md)
 - [代理(Proxy)和反射(Reflect)](Language/JavaScript/代理(Proxy)和反射(Reflect).md)
 - [Promise的实现](Language/JavaScript/Promise的实现.md)
+- [babel编译原理](Language/JavaScript/babel编译原理.md)
+- [AST语法](Language/JavaScript/AST语法.md)
 
 #### TypeScript
 
