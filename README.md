@@ -44,6 +44,7 @@
 - [Promise的实现](Language/JavaScript/Promise的实现.md)
 - [babel编译原理](Language/JavaScript/babel编译原理.md)
 - [AST语法](Language/JavaScript/AST语法.md)
+- [模块化](Language/JavaScript/模块化.md)
 
 #### TypeScript
 
@@ -92,6 +93,10 @@
 
 - [vue项目改造SSR同构](Engineering/Practice/vue项目改造SSR同构.md)
 - [h5与原生交互JsBridge](Engineering/Practice/h5与原生交互JsBridge.md)
+- [性能优化1-网络相关](Engineering/Practice/性能优化1-网络相关.md)
+- [性能优化2-优化渲染过程](Engineering/Practice/性能优化2-优化渲染过程.md)
+- [性能优化3-文件优化](Engineering/Practice/性能优化3-文件优化.md)
+- [性能优化4-其他](Engineering/Practice/性能优化4-其他.md)
 
 ### 其他(Other)
 
