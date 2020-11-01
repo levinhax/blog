@@ -24,8 +24,8 @@
 - [瀑布流布局](Language/CSS/瀑布流布局.md)
 - [position属性](Language/CSS/position属性.md)
 - [盒模型](Language/CSS/盒模型.md)
-- [link与@import的区别.md](Language/CSS/link与@import的区别.md)
-- [居中布局.md](Language/CSS/居中布局.md)
+- [link与@import的区别](Language/CSS/link与@import的区别.md)
+- [居中布局](Language/CSS/居中布局.md)
 
 #### JavaScript
 
@@ -45,6 +45,7 @@
 - [babel编译原理](Language/JavaScript/babel编译原理.md)
 - [AST语法](Language/JavaScript/AST语法.md)
 - [模块化](Language/JavaScript/模块化.md)
+- [ES6系列](Language/JavaScript/ES6系列.md)
 
 #### TypeScript
 
@@ -64,6 +65,7 @@
 #### React
 
 - [为什么要用hooks](Framework/React/为什么要用hooks.md)
+- [hooks知识点](Framework/React/hooks知识点.md)
 
 ### 计算机基础(Computer)
 
