@@ -47,6 +47,7 @@
 - [AST语法](Language/JavaScript/AST语法.md)
 - [模块化](Language/JavaScript/模块化.md)
 - [ES6系列](Language/JavaScript/ES6系列.md)
+- [js判断数据类型](Language/JavaScript/js判断数据类型.md)
 
 #### TypeScript
 
