@@ -93,11 +93,11 @@
 - [常用工具函数](Engineering/ProjectScene/常用工具函数.md)
 - [svg模拟伪3d地图](Engineering/ProjectScene/svg模拟伪3d地图.md)
 
-### 移动端
+#### 移动端
 
 - [移动端适配及PC端适配](Engineering/Mobile/移动端适配及PC端适配.md)
 
-### 实践(Practice)
+#### 实践(Practice)
 
 - [vue项目改造SSR同构](Engineering/Practice/vue项目改造SSR同构.md)
 - [h5与原生交互JsBridge](Engineering/Practice/h5与原生交互JsBridge.md)
@@ -105,6 +105,10 @@
 - [性能优化2-优化渲染过程](Engineering/Practice/性能优化2-优化渲染过程.md)
 - [性能优化3-文件优化](Engineering/Practice/性能优化3-文件优化.md)
 - [性能优化4-其他](Engineering/Practice/性能优化4-其他.md)
+
+### 编程思想(ProgrammingIdeas)
+
+- [前端必会的设计模式](ProgrammingIdeas/前端必会的设计模式.md)
 
 ### 其他(Other)
 
