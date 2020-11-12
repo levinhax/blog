@@ -69,6 +69,7 @@
 - [Vue3源码学习-vite](Framework/Vue/Vue3源码学习-vite.md)
 - [Vue3源码学习-ref和computed](Framework/Vue/Vue3源码学习-ref和computed.md)
 - [nextTick理解](Framework/Vue/nextTick理解.md)
+- [vue-router的实现原理](Framework/Vue/vue-router的实现原理.md)
 
 #### React
 
