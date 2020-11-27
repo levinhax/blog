@@ -127,3 +127,5 @@
 - [vue3-pc-tpl项目搭建](Other/vue3-pc-tpl项目搭建.md)
 - [vue3-ts-vite-admin项目搭建](Other/vue3-ts-vite-admin项目搭建.md)
 - [JSON Schema内容](Other/JSON%20Schema内容.md)
+- [vue-data-visualization项目搭建](Other/vue-data-visualization项目搭建.md)
+- [web-back项目搭建](Other/web-back项目搭建.md)
